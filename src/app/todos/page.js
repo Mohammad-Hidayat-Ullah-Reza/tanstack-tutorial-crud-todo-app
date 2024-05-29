@@ -1,6 +1,6 @@
 "use client";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+import axiosConfig from "../../../axiosConfig";
 import React from "react";
 
 const TodosPage = () => {
@@ -8,7 +8,7 @@ const TodosPage = () => {
   // post the data
   const mutation = useMutation({
     mutationFn: (newTodo) => {
-      return axios.post("http://localhost:3001/todos", newTodo);
+      return axiosConfig.post("/todos", newTodo);
     },
     onMutate: (variables) => {
       console.log("A mutation is about to happen");
@@ -25,7 +25,7 @@ const TodosPage = () => {
   //  fetch the data
   const { data: todosData } = useQuery({
     queryKey: ["todos"],
-    queryFn: () => axios.get("http://localhost:3001/todos"),
+    queryFn: () => axiosConfig.get("/todos"),
   });
   return (
     <div>

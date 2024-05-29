@@ -1,6 +1,6 @@
 "use client";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+import axiosConfig from "../../../axiosConfig";
 import React from "react";
 
 const TodoListApp = () => {
@@ -13,13 +13,13 @@ const TodoListApp = () => {
     isSuccess: isTodosSuccess,
   } = useQuery({
     queryKey: ["todosListApp"],
-    queryFn: () => axios.get("http://localhost:3001/todos"),
+    queryFn: () => axiosConfig.get("/todos"),
   });
 
   // post data into todos
   const postMutation = useMutation({
     mutationFn: (newTodo) => {
-      return axios.post("http://localhost:3001/todos", newTodo);
+      return axiosConfig.post("/todos", newTodo);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todosListApp"] });
@@ -29,7 +29,7 @@ const TodoListApp = () => {
   // delete data from todos
   const deleteMutation = useMutation({
     mutationFn: (id) => {
-      return axios.delete(`http://localhost:3001/todos/${id}`);
+      return axiosConfig.delete(`/todos/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todosListApp"] });
@@ -39,7 +39,7 @@ const TodoListApp = () => {
   // pacth data in todos
   const patchMutation = useMutation({
     mutationFn: (todo) => {
-      return axios.patch(`http://localhost:3001/todos/${todo.id}`, todo);
+      return axiosConfig.patch(`/todos/${todo.id}`, todo);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todosListApp"] });
