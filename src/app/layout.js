@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import TanstackProvider from "@/providers/TanstackProvider";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-black text-white`}>
+        <nav className="bg-black py-6">
+          <ul className="flex items-center justify-center gap-4">
+            <li>
+              <Link
+                className="w-fit text-white p-2 border-2 border-gray-400 hover:border-white rounded-lg"
+                href={`/`}
+              >
+                Todos / Users
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="w-fit text-white p-2 border-2 border-gray-400 hover:border-white rounded-lg"
+                href={`/todos`}
+              >
+                Practice Todos
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="w-fit text-white p-2 border-2 border-gray-400 hover:border-white rounded-lg uppercase"
+                href={`/todoListApp`}
+              >
+                crud Todos list app
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <TanstackProvider>{children}</TanstackProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "json-server"
+    },
+    {
+      "id": "2024-05-28T19:04:44.016Z",
+      "title": "Do Laundry"
+    },
+    {
+      "id": "2024-05-28T19:04:52.629Z",
+      "title": "Do Laundry"
+    },
+    {
+      "id": "2024-05-28T19:35:46.113Z",
+      "title": "Doing Laundry"
+    },
+    {
+      "id": "2024-05-28T19:37:49.846Z",
+      "title": "Doing Laundry"
+    },
+    {
+      "id": "2024-05-28T19:38:14.206Z",
+      "title": "Doing Laundry"
+    }
+  ]
+}

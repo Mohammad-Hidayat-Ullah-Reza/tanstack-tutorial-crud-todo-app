@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": "2",
+      "title": "do laundry",
+      "description": "washing, drying, folding"
+    },
+    {
+      "id": "3",
+      "title": "buy milk",
+      "description": "2% or whole"
+    },
+    {
+      "id": "2024-05-29T00:14:25.934Z",
+      "title": "thriller",
+      "description": "thriller, thriller night"
+    },
+    {
+      "id": "2024-05-29T00:14:49.612Z",
+      "title": "test",
+      "description": "testing 1 2 3"
+    },
+    {
+      "id": "2024-05-29T00:30:53.221Z",
+      "title": "Doing Laundry"
+    }
+  ]
+}
